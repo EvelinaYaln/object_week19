@@ -1,17 +1,18 @@
-function bike() {
-    console.log(this.name);
+class Worker {
+    constructor(name, surname, rate, days) {
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.days = days;
+    }
+    getSalary() {
+        return this.rate * this.days;
+    }
 }
 
-let name = 'ninja';
-let obj1 = {
-    name = 'pomidor',
-    bike = 'bike'
-}
-let obj2 = {
-    name = 'site',
-    bike = 'bike'
-}
-
-bike();
-obj1.bike();
-obj2.bike();
+let worker = new Worker('Катя', 'Вишневская', 100, 21);
+console.log(worker.getSalary());
+console.log(worker.name);
+console.log(worker.surname);
+console.log(worker.days);
+console.log(worker.rate);
